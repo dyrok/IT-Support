@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Session | FixMyPC Remote Support</title>
+  <meta name="description" content="Schedule a remote tech support session. Select a time slot, describe your issue, and securely connect with a technician.">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+      FixMy<span>PC</span>
+    </div>
+    
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        Home
+      </a>
+      <a href="services.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        Services
+      </a>
+      <a href="booking.html" class="nav-item active">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        Book Session
+      </a>
+      <a href="queue.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        My Requests
+      </a>
+      <a href="contact.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        Contact
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Mobile Header -->
+    <header class="page-header">
+      <div class="header-title">
+        <h1>Book a Session</h1>
+        <p>Schedule a secure remote troubleshooting session.</p>
+      </div>
+      <div class="header-actions">
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="booking-layout mb-48">
+      
+      <!-- Booking Form -->
+      <div class="form-panel">
+        <form id="bookingForm">
+          
+          <h3 class="section-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
+            1. Select Service & Time
+          </h3>
+          
+          <div class="form-group mt-24">
+            <label class="form-label" for="issueCategory">Issue Category</label>
+            <select id="issueCategory" class="form-control" required>
+              <option value="" disabled selected>Select the type of issue...</option>
+              <option value="software">Software Optimization or Errors</option>
+              <option value="hardware">Hardware Diagnostics</option>
+              <option value="network">Network & Wi-Fi Setup</option>
+              <option value="virus">Virus & Malware Removal</option>
+              <option value="other">Other / Unsure</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="bookingDate">Preferred Date</label>
+            <input type="date" id="bookingDate" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Available Slots</label>
+            <input type="hidden" id="selectedTime" required>
+            
+            <p class="text-sm text-muted mt-12 mb-4">Morning</p>
+            <div class="slot-grid">
+              <button type="button" class="time-slot" data-time="09:00 AM">09:00 AM</button>
+              <button type="button" class="time-slot" data-time="10:00 AM">10:00 AM</button>
+              <button type="button" class="time-slot disabled" disabled>11:00 AM (Booked)</button>
+            </div>
+            
+            <p class="text-sm text-muted mt-12 mb-4">Afternoon</p>
+            <div class="slot-grid">
+              <button type="button" class="time-slot" data-time="01:00 PM">01:00 PM</button>
+              <button type="button" class="time-slot" data-time="02:30 PM">02:30 PM</button>
+              <button type="button" class="time-slot" data-time="04:00 PM">04:00 PM</button>
+            </div>
+          </div>
+
+          <h3 class="section-title mt-48">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            2. System Details (Optional)
+          </h3>
+          <p class="text-sm mb-16">Help your technician by auto-detecting your system specs so they are prepared.</p>
+          
+          <button type="button" id="autoDetectBtn" class="btn btn-outline mb-16 btn-detect w-full">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            Auto-Detect Hardware
+          </button>
+          
+          <div class="hw-grid mb-24">
+            <div>
+              <label class="form-label text-sm">Operating System</label>
+              <input type="text" id="sysOs" class="form-control" placeholder="e.g. Windows 11" readonly>
+            </div>
+            <div>
+              <label class="form-label text-sm">Processor (Cores)</label>
+              <input type="text" id="sysCpu" class="form-control" placeholder="e.g. 8 cores" readonly>
+            </div>
+            <div>
+              <label class="form-label text-sm">RAM Memory</label>
+              <input type="text" id="sysRam" class="form-control" placeholder="e.g. 16 GB" readonly>
+            </div>
+            <div>
+              <label class="form-label text-sm">Display Resolution</label>
+              <input type="text" id="sysDisplay" class="form-control" placeholder="e.g. 1920x1080" readonly>
+            </div>
+          </div>
+
+          <h3 class="section-title mt-48">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            3. Issue Details
+          </h3>
+          
+          <div class="form-group mt-24">
+            <label class="form-label" for="issueDesc">Description</label>
+            <textarea id="issueDesc" class="form-control" placeholder="Describe the problem you're experiencing..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Voice Note (Optional)</label>
+            <p class="text-sm text-muted mb-8">Record a brief audio message to explain the issue faster.</p>
+            
+            <div class="audio-controls">
+              <button type="button" id="recordBtn" class="btn btn-outline btn-sm">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-status-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon-svg"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+                Record
+              </button>
+              
+              <button type="button" id="stopBtn" class="btn btn-outline btn-sm btn-stop hidden-override">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-status-red)" stroke="var(--color-status-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon-svg"><rect x="6" y="6" width="12" height="12"></rect></svg>
+                Stop
+              </button>
+              
+              <button type="button" id="playBtn" class="btn btn-outline btn-sm hidden-override">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-status-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon-svg"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                Play
+              </button>
+              
+              <button type="button" id="deleteBtn" class="btn btn-icon btn-del hidden-override" title="Delete Audio">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              </button>
+              
+              <span id="audioStatus" class="audio-status">Ready to record.</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-full mt-24">Confirm Booking</button>
+          
+        </form>
+      </div>
+
+      <!-- Side Info -->
+      <div class="info-panel">
+        <h4 class="sidebar-heading">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          Important Info
+        </h4>
+        
+        <div class="mb-24">
+          <h5 class="policy-heading">Secure Connection</h5>
+          <p class="policy-text">We use encrypted remote desktop software. You maintain full control and can terminate the session anytime.</p>
+        </div>
+        
+        <div class="mb-24">
+          <h5 class="policy-heading">Payment Policy</h5>
+          <p class="policy-text">No fix, no fee. You will only be billed after the issue is successfully resolved to your satisfaction.</p>
+        </div>
+        
+        <div>
+          <h5 class="policy-heading">Preparation</h5>
+          <ul class="policy-list">
+            <li class="mb-4">Save all open work</li>
+            <li class="mb-4">Close sensitive documents</li>
+            <li>Ensure stable internet</li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div>&copy; 2026 Quick Tech Support. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Success Modal -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-content text-center">
+      <div class="success-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <h2 class="mb-8">Booking Confirmed!</h2>
+      <p class="mb-24">Your remote tech support session has been scheduled successfully.</p>
+      
+      <div class="ticket-box">
+        <span class="ticket-label">Ticket ID</span>
+        <strong class="ticket-val" id="ticketIdDisplay">TKT-XXXX</strong>
+      </div>
+      
+      <button id="closeModal" class="btn btn-primary w-full">Track Queue Status</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>

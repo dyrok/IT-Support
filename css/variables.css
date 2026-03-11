@@ -1,0 +1,59 @@
+/* ===== DESIGN SYSTEM VARIABLES ===== */
+
+:root {
+  /* ---- Colors ---- */
+  --color-bg-base: #ffffff;
+  --color-bg-sidebar: #f8f9fb;
+  --color-bg-card: #ffffff;
+  --color-bg-input: #f4f5f7;
+
+  --color-text-main: #1a1d26;
+  --color-text-muted: #6b7280;
+
+  --color-primary: #2563eb;
+  --color-primary-light: #eff4ff;
+  --color-primary-dark: #1d4ed8;
+
+  --color-secondary: #0891b2;
+
+  /* Status Colors */
+  --color-status-green: #16a34a;
+  --color-status-green-bg: #f0fdf4;
+  --color-status-yellow: #ca8a04;
+  --color-status-yellow-bg: #fefce8;
+  --color-status-red: #dc2626;
+  --color-status-red-bg: #fef2f2;
+
+  /* Borders */
+  --color-border: #e5e7eb;
+  --color-border-light: #f0f1f3;
+
+  /* ---- Spacing ---- */
+  --space-4: 0.25rem;
+  --space-8: 0.5rem;
+  --space-12: 0.75rem;
+  --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
+
+  /* ---- Border Radius ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  /* ---- Transitions ---- */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+
+  /* ---- Layout ---- */
+  --sidebar-width: 260px;
+}

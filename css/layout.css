@@ -1,0 +1,161 @@
+/* ===== LAYOUT: SIDEBAR & MAIN CONTENT ===== */
+
+/* ---- Sidebar (Left Navigation) ---- */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--color-bg-sidebar);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-24);
+  z-index: 50;
+  transition: transform var(--transition-normal);
+  border-right: 1px solid var(--color-border);
+}
+
+/* Logo in the sidebar */
+.sidebar-logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  margin-bottom: var(--space-48);
+}
+
+.sidebar-logo span {
+  color: var(--color-primary);
+}
+
+/* Navigation link list */
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  flex: 1;
+}
+
+/* Each navigation link */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-12) var(--space-16);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+
+/* Hover: darken text and add a light background */
+.nav-item:hover {
+  color: var(--color-text-main);
+  background-color: var(--color-border-light);
+}
+
+/* Active page: blue background tint and blue text */
+.nav-item.active {
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  font-weight: 600;
+}
+
+/* ---- Main Content Area ---- */
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: var(--space-32) var(--space-48);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-base);
+}
+
+/* Page header row (title + mobile menu button) */
+.page-header {
+  margin-bottom: var(--space-48);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+/* Hamburger button — hidden on desktop, shown on mobile */
+.mobile-nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--color-text-main);
+  padding: var(--space-12);
+  border-radius: var(--radius-sm);
+}
+
+/* ---- Footer ---- */
+.main-footer {
+  margin-top: auto;
+  padding-top: var(--space-32);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-primary);
+}
+
+/* ===== RESPONSIVE (Mobile) ===== */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+
+  /* Sidebar slides off-screen on mobile */
+  .sidebar {
+    transform: translateX(-100%);
+    width: 260px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* When the "open" class is added, slide it in */
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: var(--space-24) var(--space-16);
+  }
+
+  .page-header {
+    flex-direction: row-reverse;
+  }
+
+  /* Show the hamburger button on mobile */
+  .mobile-nav-toggle {
+    display: block;
+  }
+}

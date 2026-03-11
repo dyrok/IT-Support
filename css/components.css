@@ -1,0 +1,937 @@
+/* ===== COMPONENTS ===== */
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+/* Base button style — used on all buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-24);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+}
+
+.btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+/* Primary button — solid blue */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: #ffffff;
+}
+
+/* Outline button — just a border */
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-main);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+/* Small button */
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+/* Icon-only button (square) */
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+}
+
+.btn-icon:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-icon-svg {
+  margin-right: 4px;
+}
+
+/* Special button colors */
+.btn-detect {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn-detect:hover {
+  background-color: #f0fdfa;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn-stop {
+  color: var(--color-status-red);
+}
+
+.btn-del {
+  width: 34px;
+  height: 34px;
+  color: var(--color-status-red);
+  border-radius: 50%;
+  border-color: var(--color-status-red);
+}
+
+.btn-del:hover {
+  background-color: var(--color-status-red-bg);
+  color: var(--color-status-red);
+  border-color: var(--color-status-red);
+}
+
+
+/* ============================================
+   FORMS
+   ============================================ */
+
+.form-group {
+  margin-bottom: var(--space-24);
+}
+
+/* Label above each input */
+.form-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--space-8);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Text inputs, selects, and textareas */
+.form-control {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: var(--color-bg-input);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-main);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color var(--transition-fast);
+}
+
+/* Blue border when the input is focused */
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-control::placeholder {
+  color: #9ca3af;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+
+/* ============================================
+   HOME PAGE — Hero Section
+   ============================================ */
+
+.hero {
+  padding: var(--space-48) 0 var(--space-32);
+}
+
+.hero-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-primary);
+  margin-bottom: var(--space-12);
+}
+
+.hero-heading {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-16);
+  color: var(--color-text-main);
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  max-width: 560px;
+  margin-bottom: var(--space-32);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.btn-lg {
+  padding: 14px 28px;
+  font-size: 1rem;
+}
+
+/* Stats row */
+.hero-stats {
+  display: flex;
+  gap: var(--space-32);
+  margin-top: var(--space-48);
+  padding-top: var(--space-32);
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+
+/* ============================================
+   HOME PAGE — Service Cards Grid
+   ============================================ */
+
+.section-header {
+  max-width: 500px;
+}
+
+.section-heading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: var(--space-8);
+}
+
+.home-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-24);
+}
+
+@media (max-width: 1024px) { .home-services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .home-services-grid { grid-template-columns: 1fr; } }
+
+.home-service-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-24);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-card);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.home-service-card:hover {
+  border-color: transparent;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.home-service-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-16);
+}
+
+/* Icon color variations */
+.icon-blue { background-color: #eff4ff; color: #2563eb; }
+.icon-amber { background-color: #fffbeb; color: #d97706; }
+.icon-red { background-color: #fef2f2; color: #dc2626; }
+.icon-purple { background-color: #f5f3ff; color: #7c3aed; }
+.icon-teal { background-color: #f0fdfa; color: #0d9488; }
+.icon-indigo { background-color: #eef2ff; color: #4f46e5; }
+
+.home-service-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: var(--space-8);
+  color: var(--color-text-main);
+}
+
+.home-service-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-16);
+  flex: 1;
+  line-height: 1.5;
+}
+
+.home-service-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+
+.home-service-card:hover .home-service-link {
+  color: var(--color-primary-dark);
+}
+
+
+/* ============================================
+   HOME PAGE — How It Works Steps
+   ============================================ */
+
+.steps-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+
+@media (max-width: 768px) {
+  .steps-row {
+    flex-direction: column;
+  }
+  .step-divider {
+    display: none;
+  }
+}
+
+.step-card {
+  flex: 1;
+  padding: var(--space-24);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-sidebar);
+  border: 1px solid var(--color-border-light);
+}
+
+.step-card h4 {
+  font-size: 1rem;
+  margin-bottom: var(--space-8);
+}
+
+.step-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-16);
+}
+
+.step-divider {
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-border);
+  margin-top: 40px;
+  flex-shrink: 0;
+}
+
+
+/* ============================================
+   SERVICE CARDS (Services Page)
+   ============================================ */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-24);
+}
+
+@media (max-width: 1024px) {
+  .card-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+}
+
+.service-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-normal);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+/* Icon container in each service card */
+.card-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: var(--space-24);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.service-card h3 {
+  margin-bottom: var(--space-12);
+  font-size: 1.2rem;
+}
+
+.service-card p {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+/* Tags/badges (e.g. "Windows", "macOS") */
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin-top: var(--space-16);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background-color: var(--color-bg-input);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-light);
+}
+
+.badge-os {
+  color: var(--color-text-main);
+}
+
+/* Filter pills (category filter buttons) */
+.filter-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: var(--space-48);
+  overflow-x: auto;
+  padding: 4px;
+  scrollbar-width: none;
+}
+
+.filter-container::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-input);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  color: var(--color-text-main);
+  border-color: var(--color-text-muted);
+}
+
+.filter-btn.active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+/* Price and book button row at the bottom of service cards */
+.service-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: var(--space-24);
+  padding-top: var(--space-24);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.price-tag {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+.price-tag span {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+
+/* ============================================
+   CONTACT & PANELS
+   ============================================ */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-48);
+}
+
+@media (max-width: 1024px) {
+  .contact-layout { grid-template-columns: 1fr; }
+}
+
+.info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+/* Shared panel styles — cards, form panels, info panels */
+.contact-card,
+.form-panel,
+.info-panel,
+.lookup-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  border: 1px solid var(--color-border);
+}
+
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: box-shadow var(--transition-normal);
+}
+
+.contact-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Icon circle in contact cards */
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-card h4 {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.contact-card p,
+.contact-card a {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.contact-card a:hover {
+  color: var(--color-primary);
+}
+
+
+/* ============================================
+   BOOKING LAYOUT
+   ============================================ */
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-48);
+  align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .booking-layout { grid-template-columns: 1fr; }
+}
+
+.info-panel {
+  position: sticky;
+  top: 100px;
+}
+
+/* Time slot picker buttons */
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.time-slot {
+  background-color: var(--color-bg-input);
+  border-radius: var(--radius-md);
+  padding: 12px 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+}
+
+.time-slot:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+/* Selected time slot — solid blue */
+.time-slot.selected {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+/* Disabled (already booked) time slot */
+.time-slot.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  background-color: var(--color-bg-input);
+}
+
+/* Section titles with an icon (e.g. "1. Select Service & Time") */
+.section-title {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-24);
+  padding-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-main);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+/* Two-column grid for hardware fields */
+.hw-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .hw-grid { grid-template-columns: 1fr; }
+}
+
+/* Audio recording controls */
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+
+/* ============================================
+   MODAL (Booking Confirmation Popup)
+   ============================================ */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+/* When modal is visible */
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-48);
+  width: 90%;
+  max-width: 480px;
+  transform: translateY(20px);
+  transition: transform var(--transition-fast);
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+
+/* Green checkmark circle */
+.success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 28px;
+  color: var(--color-status-green);
+  background-color: var(--color-status-green-bg);
+}
+
+/* Ticket number box */
+.ticket-box {
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 28px;
+  background-color: var(--color-bg-input);
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.ticket-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+
+.ticket-val {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+
+/* ============================================
+   QUEUE STATUS (Queue Page)
+   ============================================ */
+
+.queue-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Hidden by default, shown via JS */
+.queue-display {
+  display: none;
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-48) var(--space-32);
+  border: 1px solid var(--color-border);
+}
+
+/* Big circular ring showing queue position */
+.status-ring {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  border: 4px solid var(--color-status-yellow);
+  background-color: var(--color-bg-input);
+}
+
+.status-ring span {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.position-number {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-text-main);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Wait time and status metrics */
+.wait-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  background-color: var(--color-bg-input);
+  border: 1px solid var(--color-border-light);
+}
+
+.metric-box {
+  text-align: center;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.metric-val {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+
+/* ============================================
+   TICKET LIST (Queue Page)
+   ============================================ */
+
+.ticket-list-empty {
+  text-align: center;
+  padding: var(--space-48) var(--space-24);
+  color: var(--color-text-muted);
+}
+
+.ticket-list-empty p {
+  margin-bottom: var(--space-16);
+}
+
+.ticket-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.ticket-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-16) var(--space-24);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-card);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ticket-item:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.ticket-item-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ticket-item-id {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  font-variant-numeric: tabular-nums;
+}
+
+.ticket-item-detail {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.ticket-item-arrow {
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.ticket-item:hover .ticket-item-arrow {
+  color: var(--color-primary);
+}
+
+/* Back button for queue view */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-24);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.back-link:hover {
+  color: var(--color-primary);
+}
+
+/* Session connected timer */
+.session-timer {
+  font-size: 2rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-main);
+}

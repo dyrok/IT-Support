@@ -1,0 +1,145 @@
+/* ===== UTILITY CLASSES ===== */
+
+/* ---- Page Headings ---- */
+.page-title-section {
+  margin-bottom: var(--space-24);
+}
+
+.page-main-heading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-8);
+  font-weight: 800;
+}
+
+.page-sub-heading {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+/* ---- Text Helpers ---- */
+.text-center { text-align: center; }
+.text-sm { font-size: 0.85rem; }
+.text-xs { font-size: 0.75rem; }
+.text-muted { color: var(--color-text-muted); }
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.font-500 { font-weight: 500; }
+
+/* ---- Spacing: Margins ---- */
+.mb-0 { margin-bottom: 0; }
+.mb-4 { margin-bottom: 4px; }
+.mb-8 { margin-bottom: var(--space-8); }
+.mb-16 { margin-bottom: var(--space-16); }
+.mb-24 { margin-bottom: var(--space-24); }
+.mb-32 { margin-bottom: var(--space-32); }
+.mb-48 { margin-bottom: var(--space-48); }
+.mt-4 { margin-top: 4px; }
+.mt-12 { margin-top: 12px; }
+.mt-24 { margin-top: var(--space-24); }
+.mt-48 { margin-top: var(--space-48); }
+
+/* ---- Spacing: Padding ---- */
+.p-16 { padding: var(--space-16); }
+
+/* ---- Layout Helpers ---- */
+.w-full { width: 100%; }
+.flex { display: flex; }
+.flex-1 { flex: 1; }
+.justify-between { justify-content: space-between; }
+.align-center { align-items: center; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: var(--space-16); }
+
+/* ---- Visibility ---- */
+.hidden-title { display: none; }
+.hidden-override { display: none; }
+
+/* ---- Specific Helpers ---- */
+.chat-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.chat-link:hover {
+  color: var(--color-primary-dark);
+}
+
+.sidebar-heading {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.policy-heading {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+}
+
+.policy-text {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+.policy-list {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  padding-left: 16px;
+}
+
+/* ---- Status Badges ---- */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Colored dot before the status text */
+.status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-green {
+  color: var(--color-status-green);
+  background-color: var(--color-status-green-bg);
+}
+
+.status-green::before {
+  background-color: var(--color-status-green);
+}
+
+.status-yellow {
+  color: var(--color-status-yellow);
+  background-color: var(--color-status-yellow-bg);
+}
+
+.status-yellow::before {
+  background-color: var(--color-status-yellow);
+}
+
+.status-red {
+  color: var(--color-status-red);
+  background-color: var(--color-status-red-bg);
+}
+
+.status-red::before {
+  background-color: var(--color-status-red);
+}
+
+/* ---- Pulse Animation (used by queue connect button) ---- */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(22, 163, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+}
