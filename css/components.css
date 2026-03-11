@@ -163,20 +163,48 @@ textarea.form-control {
    ============================================ */
 
 .hero {
-  padding: var(--space-48) 0 var(--space-32);
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 70% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 40% at 20% 90%, rgba(37, 99, 235, 0.05) 0%, transparent 40%);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  padding: var(--space-64) var(--space-48);
+  gap: var(--space-64);
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+    padding: var(--space-32) var(--space-24);
+  }
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-eyebrow {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: var(--color-primary);
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-16);
 }
 
 .hero-heading {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.03em;
@@ -185,10 +213,10 @@ textarea.form-control {
 }
 
 .hero-description {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.7;
   color: var(--color-text-muted);
-  max-width: 560px;
+  max-width: 480px;
   margin-bottom: var(--space-32);
 }
 
@@ -203,34 +231,160 @@ textarea.form-control {
   font-size: 1rem;
 }
 
-/* Stats row */
-.hero-stats {
-  display: flex;
-  gap: var(--space-32);
-  margin-top: var(--space-48);
-  padding-top: var(--space-32);
-  border-top: 1px solid var(--color-border);
-  flex-wrap: wrap;
+.btn-hero-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
 }
 
-.stat-item {
+.btn-hero-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: #ffffff;
+}
+
+.btn-hero-outline {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-main);
+  backdrop-filter: blur(4px);
+}
+
+.btn-hero-outline:hover {
+  background-color: #ffffff;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+
+/* ---- Hero right side: Cursor field with mock UI ---- */
+
+.hero-visual {
+  flex-shrink: 0;
+  width: 320px;
+  height: 260px;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .hero-visual { display: none; }
+}
+
+.cursor-field {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Figma-style cursors */
+.live-cursor {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  z-index: 5;
+  pointer-events: none;
 }
 
-.stat-number {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--color-text-main);
-  line-height: 1.2;
+.live-cursor svg {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
 }
 
-.stat-label {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  font-weight: 500;
-  margin-top: 2px;
+.cursor-label {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 0 4px 4px 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  margin-top: -2px;
+  margin-left: 10px;
 }
+
+/* Cursor 1 — Blue (Alex) */
+.cursor-1 {
+  top: 30px;
+  left: 60px;
+  color: #2563eb;
+  animation: cursorMove1 6s ease-in-out infinite;
+}
+.cursor-1 .cursor-label { background-color: #2563eb; }
+
+/* Cursor 2 — Rose (Priya) */
+.cursor-2 {
+  top: 100px;
+  right: 40px;
+  color: #e11d48;
+  animation: cursorMove2 7s ease-in-out infinite;
+}
+.cursor-2 .cursor-label { background-color: #e11d48; }
+
+/* Cursor 3 — Emerald (Sam) */
+.cursor-3 {
+  bottom: 50px;
+  left: 100px;
+  color: #059669;
+  animation: cursorMove3 5s ease-in-out infinite;
+}
+.cursor-3 .cursor-label { background-color: #059669; }
+
+@keyframes cursorMove1 {
+  0%, 100% { transform: translate(0, 0); }
+  25%      { transform: translate(20px, 15px); }
+  50%      { transform: translate(40px, -5px); }
+  75%      { transform: translate(10px, 20px); }
+}
+
+@keyframes cursorMove2 {
+  0%, 100% { transform: translate(0, 0); }
+  30%      { transform: translate(-25px, 10px); }
+  60%      { transform: translate(-10px, -20px); }
+  80%      { transform: translate(-30px, 5px); }
+}
+
+@keyframes cursorMove3 {
+  0%, 100% { transform: translate(0, 0); }
+  20%      { transform: translate(15px, -10px); }
+  50%      { transform: translate(-10px, -25px); }
+  80%      { transform: translate(20px, -5px); }
+}
+
+/* Decorative mock UI cards in the background */
+.hero-mock-card {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.mock-1 { top: 10px;   left: 0;    width: 170px; }
+.mock-2 { top: 90px;   right: 0;   width: 180px; }
+.mock-3 { bottom: 15px; left: 30px; width: 140px; }
+
+.mock-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.mock-dot-green { background-color: #22c55e; }
+.mock-dot-blue  { background-color: #3b82f6; }
+.mock-dot-amber { background-color: #f59e0b; }
+
+.mock-line {
+  height: 6px;
+  border-radius: 3px;
+  background-color: var(--color-border);
+}
+.mock-line-long  { width: 100%; }
+.mock-line-med   { width: 65%; }
+.mock-line-short { width: 45%; }
 
 
 /* ============================================
@@ -771,6 +925,7 @@ textarea.form-control {
 .queue-container {
   max-width: 600px;
   margin: 0 auto;
+  display: none;
 }
 
 /* Hidden by default, shown via JS */
@@ -848,14 +1003,46 @@ textarea.form-control {
    TICKET LIST (Queue Page)
    ============================================ */
 
+.ticket-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .ticket-list-empty {
   text-align: center;
-  padding: var(--space-48) var(--space-24);
+  padding: var(--space-64) var(--space-24);
+  color: var(--color-text-muted);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-sidebar);
+}
+
+.ticket-list-empty-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--color-bg-input);
+  border: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-24);
   color: var(--color-text-muted);
 }
 
+.ticket-list-empty h4 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-8);
+  color: var(--color-text-main);
+}
+
 .ticket-list-empty p {
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-24);
+  font-size: 0.95rem;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ticket-list {

@@ -15,6 +15,7 @@ function setupQueuePage() {
   var ticketListCard = document.getElementById('ticketListCard');
   var ticketListContainer = document.getElementById('ticketListContainer');
   var queueDisplay = document.getElementById('queueDisplay');
+  var queueContainer = queueDisplay ? queueDisplay.parentElement : null;
   var positionEl = document.getElementById('queuePosition');
   var waitTimeEl = document.getElementById('waitTime');
   var statusRing = document.getElementById('statusRing');
@@ -38,7 +39,11 @@ function setupQueuePage() {
     if (tickets.length === 0) {
       ticketListContainer.innerHTML =
         '<div class="ticket-list-empty">' +
-          '<p>You haven\'t booked any sessions yet.</p>' +
+          '<div class="ticket-list-empty-icon">' +
+            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>' +
+          '</div>' +
+          '<h4>No sessions booked yet</h4>' +
+          '<p>Once you book a support session, it will appear here so you can track your queue position.</p>' +
           '<a href="booking.html" class="btn btn-primary">Book a Session</a>' +
         '</div>';
       return;
@@ -87,6 +92,7 @@ function setupQueuePage() {
   function openQueueView(ticketId) {
     // Hide ticket list, show queue display
     ticketListCard.style.display = 'none';
+    queueContainer.style.display = 'block';
     queueDisplay.style.display = 'block';
 
     // Reset the queue display
@@ -111,6 +117,7 @@ function setupQueuePage() {
     backBtn.addEventListener('click', function () {
       clearInterval(queueInterval);
       queueDisplay.style.display = 'none';
+      queueContainer.style.display = 'none';
       ticketListCard.style.display = 'block';
     });
   }

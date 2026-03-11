@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Requests | FixMyPC Remote Support</title>
+  <title>My Requests | FixMyPC</title>
   <meta name="description" content="View your support requests and track your live queue position.">
 
   <!-- Google Fonts: Inter -->
@@ -23,10 +23,10 @@
   <!-- Sidebar Navigation -->
   <aside class="sidebar">
     <div class="sidebar-logo">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-      </svg>
-      FixMy<span>PC</span>
+      <div class="logo-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line><path d="M8 10l3 3 5-5"/></svg>
+      </div>
+      Fix<span>My</span>PC
     </div>
 
     <nav class="nav-menu">
@@ -69,17 +69,19 @@
       </div>
     </header>
 
-    <div class="queue-container mb-48">
-
-      <!-- Ticket List (populated by JS) -->
-      <div class="lookup-card mb-32" id="ticketListCard">
-        <h3 class="mb-16">Your Booked Sessions</h3>
-        <div id="ticketListContainer">
-          <!-- JS will populate this -->
-        </div>
+    <!-- Ticket List (full width) -->
+    <div class="mb-48" id="ticketListCard">
+      <div class="ticket-list-header mb-24">
+        <h3 class="mb-0">Your Booked Sessions</h3>
+        <a href="booking.html" class="btn btn-sm btn-primary">+ New Session</a>
       </div>
+      <div id="ticketListContainer">
+        <!-- JS will populate this -->
+      </div>
+    </div>
 
-      <!-- Active Queue Display (Hidden by default) -->
+    <!-- Active Queue Display (Hidden by default, centered) -->
+    <div class="queue-container mb-48">
       <div class="queue-display" id="queueDisplay">
         <button class="back-link" id="backToListBtn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
@@ -109,12 +111,11 @@
           </button>
         </div>
       </div>
-
     </div>
 
     <!-- Footer -->
     <footer class="main-footer">
-      <div>&copy; 2026 Quick Tech Support. All rights reserved.</div>
+      <div>&copy; 2026 FixMyPC. All rights reserved.</div>
       <div class="footer-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
