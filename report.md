@@ -3,8 +3,8 @@ Case Study Report
 on
 FixMyPC - Remote Tech Support Web Application  
 by
-[Your Full Name]  
-[Your Full Roll Number]
+Neel Singh 
+
 
 Index
 
